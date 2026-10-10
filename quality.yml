@@ -1,0 +1,32 @@
+name: Static site quality checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  html-smoke-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Check main HTML structure and demo-safe checkout
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          pages = list(Path('.').glob('*.html'))
+          assert pages, 'No HTML pages found'
+          class Parser(HTMLParser):
+              pass
+          for page in pages:
+              parser = Parser()
+              parser.feed(page.read_text(encoding='utf-8'))
+              parser.close()
+          html = next(Path('.').glob('*.html')).read_text(encoding='utf-8')
+          assert 'پرداخت و سفارش واقعی فعال نیست' in html
+          assert 'این فقط پیش‌نمایش است' in html
+          print(f'Parsed {len(pages)} HTML page(s); demo checkout guard is present.')
+          PY
