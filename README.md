@@ -1,21 +1,14 @@
-# Narges Beauty — Demo Storefront
+# Beauty — Narges Beauty (Demo)
 
-A Persian, RTL, single-page storefront prototype for a beauty shop. It includes product cards, search, category/brand filters, product details, a local cart, a wishlist, and browser-local persistence.
+Persian RTL beauty storefront prototype. This is an experimental portfolio project, not a live shop.
 
-## Run locally
+## Features
+- Product browsing, search and filters
+- Wishlist and local browser cart (localStorage)
+- Responsive Persian interface
 
-Open `لوازم آرایشی.html` in a modern browser. The UI uses Font Awesome and Vazirmatn from CDNs; product photos are remote Unsplash URLs, so those assets need internet access.
+## Limitations
+Product data and prices are illustrative. No real checkout, payment processing, inventory, backend or order fulfillment. Replace placeholder contact details before any real use.
 
-## Important demo limitations
-
-- This is a **portfolio/demo interface**, not a live shop. Product names, brand associations, ratings, descriptions, and prices are illustrative sample data and must be verified/replaced before any commercial use.
-- Cart and wishlist are stored only in the current browser using `localStorage`.
-- Checkout deliberately does not create an order, clear the cart, charge money, or contact a backend. No payment gateway, inventory, customer accounts, or order-management backend exists.
-- Contact details shown in the template are placeholders and must be replaced before publication.
-- The project is a single HTML file to preserve the original working structure; styles and JavaScript can be separated in a future refactor.
-
-## Suggested next steps
-
-1. Replace sample products and verify product-image licensing.
-2. Add a backend and server-side validation only if a real store is intended.
-3. Configure real contact details and privacy/returns/shipping policies before public launch.
+## Source
+The full project is supplied separately as `Beauty-Portfolio-Ready.zip`. Its HTML source has not yet been committed to this repository.
