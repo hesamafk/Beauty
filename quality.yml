@@ -30,3 +30,4 @@ jobs:
           assert 'این فقط پیش‌نمایش است' in html
           print(f'Parsed {len(pages)} HTML page(s); demo checkout guard is present.')
           PY
+
